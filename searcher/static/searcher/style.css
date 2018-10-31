@@ -47,6 +47,8 @@ ul {
 
 li {
 	margin-left: 10px;
+  padding-left: 29px;
+  text-indent: -29px;
 }
 .title-block{
 	display: flex;
