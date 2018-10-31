@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="wrapper">
+	<header>
+		<div class="title font-effect-3d" style="font-size: 40px; margin-right: 30px"><a href="{% url 'index' %}">Poen</a></div>
+		<form class="search" method="post" style="margin: 20px 0;">
+			{% csrf_token %}
+		    <button class="btn-search" type="submit">
+		        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+		            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+		        </svg>
+		    </button>
+			{{form}}
+		</form>
+	</header>
+
+	<div class="title-block">
+		<div class="word" style="font-size: 70px">{{word}}</div>
+		<div class="word" style="font-size: 20px">{{pronunc}}</div>
+		<div class="word" style="font-size: 20px"># of syllables: {{syllables}}</div>
+	</div>	
+	<div class="word-details">
+		<div class="block">
+		{% for definition in definitions %}
+			<ul>
+			{% for def in definition %}
+				{% if forloop.first %}
+					<h3>{{def}}</h3>
+				{% else %}
+				<li> {{def}} </li>
+				{% endif %}
+			{% endfor %}
+			</ul>
+			</br>
+		{% endfor %}
+		</div>
+
+		<div class="block">
+			<h3> Synonyms </h3>
+			<ul>
+			{% for syn in synonyms %}
+				<li> {{syn}} </li>
+			{% endfor %}
+			</ul>
+		</div>
+
+		<div class="block">
+		<h3> Rhymes </h3>
+		<ul>
+		{% for rhyme in rhymes %}
+			<li> {{rhyme}} </li>
+		{% endfor %}
+		</ul>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

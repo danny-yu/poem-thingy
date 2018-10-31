@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+
+body{
+	background: linear-gradient(270deg, #72c6d9, #b381f7, #e190da);
+	background-size: 600% 600%;
+
+	-webkit-animation: BackgroundAnimation 16s ease infinite;
+	-moz-animation: BackgroundAnimation 16s ease infinite;
+	animation: BackgroundAnimation 16s ease infinite;
+}
+
+header{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+a{
+	all: unset;
+}
+
+@-webkit-keyframes BackgroundAnimation {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes BackgroundAnimation {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes BackgroundAnimation { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+ul {
+  	list-style-type: none;
+}
+
+li {
+	margin-left: 10px;
+}
+.title-block{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.word-details{
+	display: flex;
+	flex-direction: row;
+
+}
+.word{
+	font-weight: 700;
+	color: white;
+	text-shadow: 3px 3px black;
+
+}
+.block{
+	margin: 16px;
+	background: white;
+	padding: 20px;
+	border-radius: 20px;
+	-webkit-box-shadow: 0 8px 6px -6px black;
+	   -moz-box-shadow: 0 8px 6px -6px black;
+	        box-shadow: 0 8px 6px -6px black;
+}
+
+.wrapper{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center
+}
+
+.title{
+	font-weight: 900;
+	text-align: center;
+	font-size: 130px;
+	margin-bottom: 20px;
+}
+
+label{
+	display: none;
+}
+
+.search {
+    width: 500px;
+    height: 70px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.search input {
+  height: 100%;
+  width: 100%;
+  border: 0;
+  background: #fff;
+  display: block;
+  width: 100%;
+  padding: 10px 32px 10px 70px;
+  font-size: 18px;
+  color: black;
+  border-radius: 34px;
+}
+
+.search input.placeholder{
+  color: #ccc;
+  font-size: 18px;
+}
+
+.search input:focus{
+  outline: none;
+}
+
+.search .btn-search {
+  width: 70px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  position: absolute;
+  left: 0;
+  height: 100%;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  align-items: center;
+}
+
+.search .btn-search svg {
+  fill: #ccc;
+  width: 30px;
+  height: 30px;
+  transition: all .2s ease-out, color .2s ease-out;
+}
+
+.search .btn-search:hover, .search .btn-search:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+.search .btn-search:hover svg, .search .btn-search:focus svg {
+  fill: #666;
+}
