@@ -35,3 +35,16 @@ def thesSearchApi(word):
 	syn_dict = r.json()
 	synonyms = syn_dict['synonyms']
 	return synonyms
+
+def rhymeSearchApi(word):
+	rhyme_url = "https://wordsapiv1.p.mashape.com/words/" + word + "/rhymes"
+	headers = {
+		'x-rapidapi-host': "wordsapiv1.p.rapidapi.com",
+		'x-rapidapi-key': ""
+	}
+	r = requests.get(rhyme_url, headers=headers)
+	rhyme_dict = r.json()
+	rhymes = rhyme_dict['rhymes']['all']
+	return rhymes
+
+
