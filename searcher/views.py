@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from bs4 import BeautifulSoup
 import requests
-from .webscrape import defSearch, thesSearch, rhymeSearch
+from .webscrape import rhymeSearch
+from .apicalls import defSearchApi, thesSearchApi
 from .forms import SearchForm
 
 # Create your views here.
@@ -26,8 +27,8 @@ def wordSearch(request, word):
     else:
         form = SearchForm()
     try:
-        pronunc, syllables, definitions = defSearch(word)
-        synonyms = thesSearch(word)
+        pronunc, syllables, definitions = defSearchApi(word)
+        synonyms = thesSearchApi(word)
         rhymes = rhymeSearch(word)
 
         return render(request, 'wordsearch.html', {'word': word,
